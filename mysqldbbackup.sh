@@ -10,3 +10,8 @@ systemctl restart apparmor.service
 #awk '/[mysqld]/{print $0 RS "datadir = /data/mysql";next}1'  /etc/mysql/mysql.conf.d/mysqld.cnf
 sed -i '23i datadir = /data/mysql/' /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart
+#Enabling Sysstat
+apt install sysstat -y
+sed -i 's/false/true/g' /etc/default/sysstat
+service sysstat enable
+service sysstat start
