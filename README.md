@@ -1,1 +1,1 @@
-# Mysql-db-backup
+# SSH scripts.
